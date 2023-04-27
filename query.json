@@ -1,0 +1,30 @@
+{
+    "_source": [
+        "first-name",
+        "last-name",
+        "age",
+        "genre",
+        "weight",
+        "height"
+    ],
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "match": {
+                        "first-name": "Pedro"
+                    }
+                }
+            ],
+            "filter": [
+                {
+                    "range": {
+                        "age": {
+                            "gte": 18
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
